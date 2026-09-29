@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sistema de Inventario</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sistema de Inventario</h1>
+      <nav>
+        <button class="tab-btn active" data-tab="categorias">Categorías</button>
+        <button class="tab-btn" data-tab="productos">Productos</button>
+        <button class="tab-btn" data-tab="entradas">Entradas</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="categorias" class="tab-content active">
+        <h2>Categorías</h2>
+        <form id="form-categoria">
+          <input type="text" id="cat-nombre" placeholder="Nombre" required />
+          <input
+            type="text"
+            id="cat-descripcion"
+            placeholder="Descripción"
+            required
+          />
+          <button type="submit">Agregar</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-categorias"></tbody>
+        </table>
+      </section>
+
+      <section id="productos" class="tab-content">
+        <h2>Productos</h2>
+        <form id="form-producto">
+          <input type="text" id="prod-nombre" placeholder="Nombre" required />
+          <input type="text" id="prod-descripcion" placeholder="Descripción" />
+          <input
+            type="number"
+            id="prod-precio"
+            placeholder="Precio"
+            step="0.01"
+            required
+          />
+          <input
+            type="number"
+            id="prod-stock"
+            placeholder="Stock mínimo"
+            required
+          />
+          <input
+            type="number"
+            id="prod-categoria"
+            placeholder="ID de categoría"
+            required
+          />
+          <button type="submit">Agregar</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Categoría</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-productos"></tbody>
+        </table>
+      </section>
+
+      <section id="entradas" class="tab-content">
+        <h2>Entradas</h2>
+        <form id="form-entrada">
+          <input
+            type="number"
+            id="entrada-producto"
+            placeholder="ID de producto"
+            required
+          />
+          <input
+            type="number"
+            id="entrada-cantidad"
+            placeholder="Cantidad"
+            required
+          />
+          <input
+            type="text"
+            id="entrada-factura"
+            placeholder="Factura"
+            required
+          />
+          <input type="text" id="entrada-stand" placeholder="Stand" required />
+          <input
+            type="text"
+            id="entrada-ubicacion"
+            placeholder="Ubicación"
+            required
+          />
+          <button type="submit">Agregar</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Factura</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-entradas"></tbody>
+        </table>
+      </section>
+
+      <p id="mensaje"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
